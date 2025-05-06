@@ -1,6 +1,6 @@
 const RoadConstruction = require('../models/RoadConstruction');
 
-const getNearbyConstructions = async (userLat, userLng, radius = 5000) => {
+const getNearbyConstructions = async (userLat, userLng, radius = 500) => {
   const R = 6371000; // 지구 반지름(m)
 
   const toRad = deg => (deg * Math.PI) / 180;

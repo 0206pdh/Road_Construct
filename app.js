@@ -3,6 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const RoadConstruction = require('./models/RoadConstruction');
 const nearbyRoute = require('./routes/nearbyRoute'); // ✅ 추가
+const constructionRoute = require('./routes/constructionRoute');
+const cors = require('cors');
+
 
 
 const app = express();
@@ -44,3 +47,5 @@ app.get('/api/constructions', async (req, res) => {
 
 app.use('/api/nearby', nearbyRoute); // ✅ 라우터 등록
 app.listen(PORT, () => console.log(`🚀 서버 실행 중: http://localhost:${PORT}`));
+app.use(cors());
+app.use('/constructions', constructionRoute);
